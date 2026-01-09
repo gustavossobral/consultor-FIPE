@@ -1,6 +1,6 @@
 package com.nexuscar.system.nexuscarsystem.controller;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.*;
+import com.nexuscar.system.nexuscarsystem.domain.DTO.fipe.*;
 import com.nexuscar.system.nexuscarsystem.domain.service.FipeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

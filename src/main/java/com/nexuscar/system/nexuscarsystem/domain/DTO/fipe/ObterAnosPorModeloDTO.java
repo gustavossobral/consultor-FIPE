@@ -1,4 +1,4 @@
-package com.nexuscar.system.nexuscarsystem.domain.DTO;
+package com.nexuscar.system.nexuscarsystem.domain.DTO.fipe;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

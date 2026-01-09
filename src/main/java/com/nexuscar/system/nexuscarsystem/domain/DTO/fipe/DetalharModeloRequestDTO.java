@@ -1,9 +1,9 @@
-package com.nexuscar.system.nexuscarsystem.domain.DTO;
+package com.nexuscar.system.nexuscarsystem.domain.DTO.fipe;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record ObterAnosPorModeloRequestDTO(
+public record DetalharModeloRequestDTO(
 
         @NotNull
         @NotBlank
@@ -11,6 +11,10 @@ public record ObterAnosPorModeloRequestDTO(
 
         @NotNull
         @NotBlank
-        String modeloId
+        String modeloId,
+
+        @NotNull
+        @NotBlank
+        String anoId
 ) {
 }

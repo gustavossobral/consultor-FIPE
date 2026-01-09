@@ -1,9 +1,9 @@
 package com.nexuscar.system.nexuscarsystem.domain.client;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.ConsultarFIPEPorMarcaDTO;
-import com.nexuscar.system.nexuscarsystem.domain.DTO.ConsultarModelosPorMarcaDTO;
-import com.nexuscar.system.nexuscarsystem.domain.DTO.DetalharModeloDTO;
-import com.nexuscar.system.nexuscarsystem.domain.DTO.ObterAnosPorModeloDTO;
+import com.nexuscar.system.nexuscarsystem.domain.DTO.fipe.ConsultarFIPEPorMarcaDTO;
+import com.nexuscar.system.nexuscarsystem.domain.DTO.fipe.ConsultarModelosPorMarcaDTO;
+import com.nexuscar.system.nexuscarsystem.domain.DTO.fipe.DetalharModeloDTO;
+import com.nexuscar.system.nexuscarsystem.domain.DTO.fipe.ObterAnosPorModeloDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

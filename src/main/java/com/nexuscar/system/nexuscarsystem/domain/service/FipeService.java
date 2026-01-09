@@ -1,6 +1,6 @@
 package com.nexuscar.system.nexuscarsystem.domain.service;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.*;
+import com.nexuscar.system.nexuscarsystem.domain.DTO.fipe.*;
 import com.nexuscar.system.nexuscarsystem.domain.client.BrasilApiClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

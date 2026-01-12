@@ -1,7 +1,7 @@
 package com.nexuscar.system.nexuscarsystem.domain.service;
 
 import com.nexuscar.system.nexuscarsystem.domain.DTO.fipe.*;
-import com.nexuscar.system.nexuscarsystem.domain.client.BrasilApiClient;
+import com.nexuscar.system.nexuscarsystem.domain.client.FipeOnlineClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class FipeService {
 
     @Autowired
-    private BrasilApiClient consultarFipe;
+    private FipeOnlineClient consultarFipe;
 
     public ConsultarFIPEPorMarcaDTO buscarPorMarca(ConsultarMarcaRequestDTO marca){
         List<ConsultarFIPEPorMarcaDTO> todasAsMarcas = consultarFipe.consultarCodigoPorMarca();

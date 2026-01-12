@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @FeignClient(name = "FipeOnline", url = "https://fipe.parallelum.com.br/api/v2")
-public interface BrasilApiClient {
+public interface FipeOnlineClient {
 
     @GetMapping("/cars/brands")
     List<ConsultarFIPEPorMarcaDTO> consultarCodigoPorMarca();

@@ -17,13 +17,13 @@ public record CadastrarCarroDTO(
         String marca,
 
         @NotNull
-        short anoFabricacao,
+        Short anoFabricacao,
 
         @NotNull
-        int quilometragem,
+        Integer quilometragem,
 
         @NotNull
-        byte qtdDonos,
+        Byte qtdDonos,
 
         @NotNull
         BigDecimal preco,
@@ -36,10 +36,6 @@ public record CadastrarCarroDTO(
         @NotNull
         String combustivel,
 
-        String observacoes,
-
-        @NotNull
-        Status status
-
+        String observacoes
 ) {
 }

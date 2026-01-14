@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface CarroRepository extends JpaRepository<CarroEntity, Long> {
 
-    List<CarroEntity> findByPrecoBetween(BigDecimal min, BigDecimal max);
+    List<CarroEntity> findByPrecoBetweenAndStatus(BigDecimal min, BigDecimal max, Status status);
 
-    List<CarroEntity> findByQuilometragemBetween(int min, int max);
+    List<CarroEntity> findByQuilometragemBetweenAndStatus(int min, int max, Status status);
+
+    List<CarroEntity> findByStatus(Status status);
 }

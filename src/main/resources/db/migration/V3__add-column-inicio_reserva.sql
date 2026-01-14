@@ -1,0 +1,2 @@
+ALTER TABLE carros
+ADD COLUMN inicio_reserva TIMESTAMP NULL;

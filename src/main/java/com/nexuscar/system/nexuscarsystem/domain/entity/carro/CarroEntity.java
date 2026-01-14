@@ -41,6 +41,8 @@ public class CarroEntity {
 
     private LocalDateTime dataDeCadastro;
 
+    private LocalDateTime inicioReserva;
+
     @Enumerated(EnumType.STRING)
     private Status status;
 
@@ -56,7 +58,7 @@ public class CarroEntity {
         this.combustivel = dto.combustivel();
         this.observacoes = dto.observacoes();
         this.dataDeCadastro = LocalDateTime.now(ZoneId.of("America/Sao_Paulo"));
-
+        this.status = Status.DISPONIVEL;
     }
 
 

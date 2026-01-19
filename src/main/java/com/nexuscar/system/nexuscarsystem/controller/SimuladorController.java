@@ -6,6 +6,7 @@ import com.nexuscar.system.nexuscarsystem.domain.DTO.bancoCentral.SimulacaoFinan
 import com.nexuscar.system.nexuscarsystem.domain.service.SimuladorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,6 +17,7 @@ public class SimuladorController {
     SimuladorService service;
 
     @GetMapping("/bacen")
+    @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR')")
     public ResponseEntity<ObterBacenDTO> consultarBacenAtual(){
 
         var bacen = service.obterValorBacen();
@@ -24,6 +26,7 @@ public class SimuladorController {
     }
 
     @PostMapping("/valor-parcela")
+    @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR')")
     public ResponseEntity<SimulacaoFinanciamentoResponseDTO> simularFinanciamento(@RequestBody SimulacaoFinanciamentoDTO dto){
 
         var response = service.simularFinanciamento(dto);

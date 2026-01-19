@@ -1,10 +1,11 @@
-package com.nexuscar.system.nexuscarsystem.domain.DTO.cliente;
+package com.nexuscar.system.nexuscarsystem.domain.DTO.usuario;
 
+import com.nexuscar.system.nexuscarsystem.domain.entity.usuario.UserRole;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record CadastrarClienteDTO(
+public record CadastrarUsuarioDTO(
 
         @NotNull
         @NotBlank
@@ -15,11 +16,18 @@ public record CadastrarClienteDTO(
         String email,
 
         @NotNull
+        @NotBlank
+        String senha,
+
+        @NotNull
         long telefone,
 
         @NotNull
         long cpf,
 
         @Valid
-        EnderecoDTO endereco
+        EnderecoDTO endereco,
+
+        @NotNull
+        UserRole role
 ) {}

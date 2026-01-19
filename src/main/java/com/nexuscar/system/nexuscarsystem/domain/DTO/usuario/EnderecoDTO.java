@@ -1,4 +1,4 @@
-package com.nexuscar.system.nexuscarsystem.domain.DTO.cliente;
+package com.nexuscar.system.nexuscarsystem.domain.DTO.usuario;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

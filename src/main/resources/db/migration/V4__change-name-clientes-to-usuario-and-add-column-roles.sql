@@ -1,0 +1,3 @@
+ALTER TABLE clientes RENAME TO usuarios;
+
+ALTER TABLE usuarios ADD COLUMN role VARCHAR(50) NOT NULL;

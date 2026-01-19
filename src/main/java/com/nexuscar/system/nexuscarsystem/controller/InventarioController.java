@@ -5,20 +5,17 @@ import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.cadastro.CadastroCarr
 import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.filtrar.CarrosFiltradosDTO;
 import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.filtrar.FiltrarCarrosPorPrecoDTO;
 import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.filtrar.FiltrarCarrosPorQuilometragemDTO;
-import com.nexuscar.system.nexuscarsystem.domain.DTO.cliente.CadastrarClienteResponseDTO;
 import com.nexuscar.system.nexuscarsystem.domain.entity.carro.CarroEntity;
 import com.nexuscar.system.nexuscarsystem.domain.entity.carro.CarroRepository;
-import com.nexuscar.system.nexuscarsystem.domain.entity.carro.Status;
 import com.nexuscar.system.nexuscarsystem.domain.service.InventarioService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -33,6 +30,7 @@ public class InventarioController {
 
     @PostMapping("/cadastrar")
     @Transactional
+    @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR')")
     public ResponseEntity<CadastroCarroResponseDTO> cadastrarCarro(@RequestBody @Valid CadastrarCarroDTO dto, UriComponentsBuilder uriBuilder){
 
         var carro = new CarroEntity(dto);
@@ -45,6 +43,7 @@ public class InventarioController {
     }
 
     @PostMapping("/filtrar/preco")
+    @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR', 'CLIENTE')")
     public ResponseEntity<List<CarrosFiltradosDTO>> filtarPorPreco(@RequestBody @Valid FiltrarCarrosPorPrecoDTO dto){
 
         var carros = service.filtrarCarrosPorPreco(dto);
@@ -53,6 +52,7 @@ public class InventarioController {
     }
 
     @PostMapping("/filtrar/quilometragem")
+    @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR', 'CLIENTE')")
     public ResponseEntity<List<CarrosFiltradosDTO>> filtrarPorQuilometragem(@RequestBody @Valid FiltrarCarrosPorQuilometragemDTO dto){
 
       var carros = service.filtrarCarrosPorQuilometragem(dto);
@@ -61,6 +61,7 @@ public class InventarioController {
     }
 
     @GetMapping("/modelos")
+    @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR', 'CLIENTE')")
     public ResponseEntity<List<CarrosFiltradosDTO>> acessarModelosDisponiveis(){
 
         var carros = service.filtrarCarrosDisponiveis();
@@ -70,6 +71,7 @@ public class InventarioController {
 
     @PostMapping("/reservar/{id}")
     @Transactional
+    @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR')")
     public ResponseEntity<String> reservarModelo(@PathVariable Long id){
 
         var carroSelecionado = repository.getReferenceById(id);
@@ -81,6 +83,7 @@ public class InventarioController {
 
     @PostMapping("/vender/{id}")
     @Transactional
+    @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR')")
     public ResponseEntity<String> venderModelo(@PathVariable Long id){
 
         var carroSelecionado = repository.getReferenceById(id);

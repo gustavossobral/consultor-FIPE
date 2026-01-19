@@ -1,9 +1,8 @@
-package com.nexuscar.system.nexuscarsystem.domain.entity.cliente;
+package com.nexuscar.system.nexuscarsystem.domain.entity.usuario;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.cliente.EnderecoDTO;
+import com.nexuscar.system.nexuscarsystem.domain.DTO.usuario.EnderecoDTO;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

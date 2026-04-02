@@ -1,12 +1,11 @@
-package com.nexuscar.system.nexuscarsystem.domain.DTO.carro.cadastro;
+package com.nexuscar.system.nexuscarsystem.domain.DTO.carro;
 
-import com.nexuscar.system.nexuscarsystem.domain.entity.carro.Status;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 
-public record CadastrarCarroDTO(
+public record CarRegisterDTO(
 
         @NotBlank
         @NotNull

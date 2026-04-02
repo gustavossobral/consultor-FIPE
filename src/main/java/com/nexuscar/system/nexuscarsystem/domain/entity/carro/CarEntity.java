@@ -1,6 +1,6 @@
 package com.nexuscar.system.nexuscarsystem.domain.entity.carro;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.cadastro.CadastrarCarroDTO;
+import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.CarRegisterDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,7 +15,7 @@ import java.time.ZoneId;
 @Setter
 @Getter
 @EqualsAndHashCode(of = {"id"})
-public class CarroEntity {
+public class CarEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,9 +44,9 @@ public class CarroEntity {
     private LocalDateTime inicioReserva;
 
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private Status status = Status.DISPONIVEL;
 
-    public CarroEntity(CadastrarCarroDTO dto){
+    public CarEntity(CarRegisterDTO dto){
 
         this.modelo = dto.modelo();
         this.marca = dto.marca();

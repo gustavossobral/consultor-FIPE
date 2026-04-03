@@ -1,8 +1,10 @@
 package com.nexuscar.system.nexuscarsystem.controller;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.fipe.*;
-import com.nexuscar.system.nexuscarsystem.domain.service.FipeService;
-import jakarta.validation.Valid;
+import com.nexuscar.system.nexuscarsystem.service.FipeService;
+import com.nexuscar.system.nexuscarsystem.dto.fipe.ConsultBrandsDTO;
+import com.nexuscar.system.nexuscarsystem.dto.fipe.DetailModelDTO;
+import com.nexuscar.system.nexuscarsystem.dto.fipe.ModelsPerBrandDTO;
+import com.nexuscar.system.nexuscarsystem.dto.fipe.YearsPerModelDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,8 +12,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/fipe")

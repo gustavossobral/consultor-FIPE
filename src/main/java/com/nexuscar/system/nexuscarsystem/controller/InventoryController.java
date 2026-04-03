@@ -1,8 +1,8 @@
 package com.nexuscar.system.nexuscarsystem.controller;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.CarRegisterDTO;
-import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.filtrar.CarFilterDTO;
-import com.nexuscar.system.nexuscarsystem.domain.service.InventoryService;
+import com.nexuscar.system.nexuscarsystem.dto.car.CarRegisterDTO;
+import com.nexuscar.system.nexuscarsystem.dto.car.CarFilterDTO;
+import com.nexuscar.system.nexuscarsystem.service.InventoryService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

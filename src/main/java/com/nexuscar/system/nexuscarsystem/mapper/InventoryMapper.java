@@ -1,8 +1,8 @@
 package com.nexuscar.system.nexuscarsystem.mapper;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.CarRegisterDTO;
-import com.nexuscar.system.nexuscarsystem.domain.DTO.carro.filtrar.CarFilterDTO;
-import com.nexuscar.system.nexuscarsystem.domain.entity.carro.CarEntity;
+import com.nexuscar.system.nexuscarsystem.dto.car.CarRegisterDTO;
+import com.nexuscar.system.nexuscarsystem.dto.car.CarFilterDTO;
+import com.nexuscar.system.nexuscarsystem.model.CarEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

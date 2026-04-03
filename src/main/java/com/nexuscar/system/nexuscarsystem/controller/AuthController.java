@@ -1,9 +1,9 @@
 package com.nexuscar.system.nexuscarsystem.controller;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.usuario.RegisterUserDTO;
-import com.nexuscar.system.nexuscarsystem.domain.DTO.usuario.LoginDTO;
-import com.nexuscar.system.nexuscarsystem.domain.DTO.usuario.TokenResponseDTO;
-import com.nexuscar.system.nexuscarsystem.domain.service.AuthService;
+import com.nexuscar.system.nexuscarsystem.dto.user.RegisterUserDTO;
+import com.nexuscar.system.nexuscarsystem.dto.user.LoginDTO;
+import com.nexuscar.system.nexuscarsystem.dto.user.TokenResponseDTO;
+import com.nexuscar.system.nexuscarsystem.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,8 +33,8 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<TokenResponseDTO> login(@RequestBody @Valid LoginDTO dto){
 
-        var response = service.login(dto);
+        TokenResponseDTO token = service.login(dto);
 
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(token);
     }
 }

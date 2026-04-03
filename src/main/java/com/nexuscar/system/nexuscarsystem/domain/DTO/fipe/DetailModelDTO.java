@@ -2,7 +2,7 @@ package com.nexuscar.system.nexuscarsystem.domain.DTO.fipe;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record DetalharModeloDTO(
+public record DetailModelDTO(
 
         @JsonProperty("vehicleType")
         String tipoDoVeiculo,

@@ -2,7 +2,7 @@ package com.nexuscar.system.nexuscarsystem.domain.DTO.fipe;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record ConsultarFIPEPorMarcaDTO(
+public record ConsultBrandsDTO(
         @JsonProperty("name")
         String Marca,
 

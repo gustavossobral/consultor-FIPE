@@ -1,15 +1,15 @@
 package com.nexuscar.system.nexuscarsystem.domain.client;
 
-import com.nexuscar.system.nexuscarsystem.domain.DTO.bancoCentral.ObterBacenDTO;
+import com.nexuscar.system.nexuscarsystem.domain.DTO.centralBank.BacenRateDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
 @FeignClient(name = "BancoCentral", url = "https://api.bcb.gov.br")
-public interface BancoCentralClient {
+public interface CentralBankClient {
 
     @GetMapping("/dados/serie/bcdata.sgs.25471/dados/ultimos/1?formato=json")
-    List<ObterBacenDTO> obterBacen();
+    List<BacenRateDTO> getBacenValue();
 
 }
